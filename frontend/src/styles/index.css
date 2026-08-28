@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white text-ink-800 font-sans antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-bold text-ink-900 tracking-tight;
+  }
+
+  /* 키보드 사용자용 포커스 링 — 접근성 */
+  :focus-visible {
+    @apply outline-none ring-4 ring-brand-300 ring-offset-2 rounded-md;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* 본문 콘텐츠(공지 상세 등 HTML) 기본 타이포 */
+  .prose-basic :where(p) { @apply my-4 leading-8; }
+  .prose-basic :where(h3) { @apply mt-8 mb-3 text-xl; }
+  .prose-basic :where(ul) { @apply my-4 list-disc pl-6 space-y-2; }
+  .prose-basic :where(ol) { @apply my-4 list-decimal pl-6 space-y-2; }
+  .prose-basic :where(strong) { @apply font-bold text-ink-900; }
+}
+
+/* Swiper 커스텀 */
+.swiper-pagination-bullet {
+  background: #ffffff;
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 28px;
+  border-radius: 5px;
+}

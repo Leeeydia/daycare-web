@@ -1,0 +1,38 @@
+# 의존성
+node_modules/
+.pnp
+.pnp.js
+
+# 빌드 산출물
+dist/
+build/
+out/
+frontend/dist/
+backend/build/
+backend/bin/
+backend/out/
+.gradle/
+
+# 환경변수 · 시크릿 (절대 커밋 금지)
+.env
+.env.*
+!.env.example
+application-prod.yml
+application-secret.yml
+*.pem
+*.key
+
+# 업로드 파일
+uploads/
+
+# 로그
+*.log
+npm-debug.log*
+logs/
+
+# 에디터 · OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+Thumbs.db

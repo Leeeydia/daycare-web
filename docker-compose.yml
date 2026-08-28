@@ -1,0 +1,29 @@
+# 로컬 개발용 — MySQL만 실행한다.
+# 백엔드/프론트는 각각 ./gradlew bootRun, npm run dev 로 호스트에서 직접 실행한다.
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: daycare-mysql
+    restart: unless-stopped
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-localroot}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-daycare}
+      MYSQL_USER: ${MYSQL_USER:-daycare}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-localpass}
+      TZ: Asia/Seoul
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-time-zone=+09:00
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  mysql-data:
