@@ -88,8 +88,9 @@ export default function HomePage() {
                       </ButtonLink>
                       <ButtonLink
                         to={site.telHref}
+                        variant="onBrandOutline"
                         size="lg"
-                        className="border-2 border-white bg-white/10 text-white backdrop-blur hover:bg-white/20"
+                        className="backdrop-blur"
                       >
                         <Icon name="phone" size={22} /> {site.tel}
                       </ButtonLink>

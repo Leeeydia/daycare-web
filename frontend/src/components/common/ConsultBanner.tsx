@@ -18,13 +18,13 @@ export function ConsultBanner() {
         </p>
 
         <div className="mx-auto mt-8 flex max-w-xl flex-col gap-3 sm:flex-row sm:justify-center">
-          <ButtonLink to="/consult" size="lg" className="bg-white text-brand-700 hover:bg-brand-50" fullWidth>
+          <ButtonLink to="/consult" variant="onBrand" size="lg" fullWidth>
             <Icon name="document" size={22} /> 온라인 상담 신청
           </ButtonLink>
           <ButtonLink
             to={site.telHref}
+            variant="onBrandOutline"
             size="lg"
-            className="border-2 border-white bg-transparent text-white hover:bg-white/10"
             fullWidth
           >
             <Icon name="phone" size={22} /> {site.tel}

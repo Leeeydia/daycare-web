@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 
-type Variant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'kakao'
+type Variant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'kakao' | 'onBrand' | 'onBrandOutline'
 type Size = 'sm' | 'md' | 'lg'
 
 const variantClass: Record<Variant, string> = {
@@ -10,6 +10,10 @@ const variantClass: Record<Variant, string> = {
   outline: 'border-2 border-brand-600 text-brand-700 bg-white hover:bg-brand-50',
   ghost: 'text-ink-700 hover:bg-ink-100',
   kakao: 'bg-[#FEE500] text-[#191600] hover:brightness-95 shadow-card',
+  // 브랜드 컬러 배경 위에 얹는 버튼. className으로 색을 덮어쓰면 유틸리티 우선순위가
+  // 어긋나 글자가 배경에 묻힐 수 있으므로 반드시 이 variant를 쓴다.
+  onBrand: 'bg-white text-brand-700 hover:bg-brand-50 shadow-card',
+  onBrandOutline: 'border-2 border-white bg-white/10 text-white hover:bg-white/20',
 }
 
 // 44px 이상 터치 영역 확보 (고령 보호자 사용성)
