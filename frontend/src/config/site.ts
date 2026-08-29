@@ -4,8 +4,8 @@
  * TODO(운영 전 교체): CENTER_NAME, TEL, ADDRESS, BUSINESS, KAKAO_*, DOMAIN
  */
 
-export const CENTER_NAME = '{{CENTER_NAME}}' // 예: 햇살주간보호센터
-export const CENTER_NAME_SHORT = '{{CENTER_NAME}}'
+export const CENTER_NAME = '○○주간보호센터' // TODO({{CENTER_NAME}}): 상호명 확정 시 교체
+export const CENTER_NAME_SHORT = '○○주간보호센터'
 
 export const site = {
   name: CENTER_NAME,
@@ -16,21 +16,21 @@ export const site = {
     '인지활동·신체활동 프로그램, 안전한 송영 차량, 전문 요양보호사가 함께합니다.',
 
   /** 대표 연락처 — tel: 링크에는 telHref를 사용한다 */
-  tel: '{{TEL}}', // 예: 031-000-0000
-  telHref: 'tel:{{TEL_RAW}}', // 예: tel:0310000000
-  fax: '{{FAX}}',
-  email: '{{EMAIL}}',
+  tel: '000-0000-0000', // TODO({{TEL}}): 대표 전화번호
+  telHref: 'tel:00000000000', // TODO({{TEL_RAW}}): 하이픈 없는 번호
+  fax: '000-0000-0000', // TODO({{FAX}})
+  email: 'contact@example.com', // TODO({{EMAIL}})
 
   address: {
-    full: '{{ADDRESS}}', // 예: 경기도 ○○시 ○○구 ○○로 123, 2층
-    postalCode: '{{POSTAL_CODE}}',
+    full: '○○도 ○○시 ○○구 ○○로 000, 2층', // TODO({{ADDRESS}}): 실제 주소
+    postalCode: '00000', // TODO({{POSTAL_CODE}})
     /** 카카오맵 표시용 좌표 — 실제 주소 확정 후 교체 */
     lat: 37.5665,
     lng: 126.978,
     parking: '건물 부설주차장 이용 가능 (상담 시 안내)',
     transport: [
-      { type: '버스', desc: '{{BUS_INFO}}' },
-      { type: '지하철', desc: '{{SUBWAY_INFO}}' },
+      { type: '버스', desc: '000번 · 000번 ○○정류장 하차, 도보 3분' }, // TODO({{BUS_INFO}})
+      { type: '지하철', desc: '○○선 ○○역 0번 출구, 도보 10분' }, // TODO({{SUBWAY_INFO}})
     ],
   },
 
@@ -42,21 +42,21 @@ export const site = {
   },
 
   /** 외부 채널 */
-  kakaoChannelUrl: '{{KAKAO_CHANNEL_URL}}', // 예: http://pf.kakao.com/_xxxxxx
+  kakaoChannelUrl: '#', // TODO({{KAKAO_CHANNEL_URL}}): 카카오톡 채널 개설 후 교체
   kakaoMapKey: '{{KAKAO_MAP_JS_KEY}}', // 카카오 개발자 콘솔 JavaScript 키
-  naverPlaceUrl: '{{NAVER_PLACE_URL}}',
+  naverPlaceUrl: '#', // TODO({{NAVER_PLACE_URL}})
   blogUrl: '',
 
   /** 사업자/기관 정보 — 푸터 표기용 */
   business: {
-    ceoName: '{{CEO_NAME}}',
-    companyName: '{{BUSINESS_NAME}}',
-    registrationNumber: '{{BUSINESS_NO}}', // 사업자등록번호
-    institutionNumber: '{{INSTITUTION_NO}}', // 장기요양기관 기호
+    ceoName: '○○○', // TODO({{CEO_NAME}})
+    companyName: '○○주간보호센터', // TODO({{BUSINESS_NAME}})
+    registrationNumber: '000-00-00000', // TODO({{BUSINESS_NO}}): 사업자등록번호
+    institutionNumber: '00000000000', // TODO({{INSTITUTION_NO}}): 장기요양기관 기호
   },
 
   /** 배포 도메인 — OG 태그 절대 URL 생성에 사용 */
-  domain: 'https://{{DOMAIN}}',
+  domain: 'https://example.com', // TODO({{DOMAIN}}): 가비아 도메인 확정 후 교체
 
   /** 개인정보 보유 기간 — 폼 동의 문구와 처리방침에서 함께 참조 */
   privacyRetentionMonths: 12,

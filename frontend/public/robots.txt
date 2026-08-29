@@ -1,0 +1,4 @@
+# 검토용 미리보기 배포 — 검색엔진 수집 차단.
+# 실제 오픈 시 아래 두 줄을 지우고 sitemap.xml 경로를 추가할 것. (Phase 5)
+User-agent: *
+Disallow: /

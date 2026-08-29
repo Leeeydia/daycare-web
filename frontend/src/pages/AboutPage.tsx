@@ -26,10 +26,10 @@ const visions = [
 ] as const
 
 const staff = [
-  { role: '센터장', name: '{{CEO_NAME}}', desc: '사회복지사 1급 · 요양보호사' },
-  { role: '사회복지사', name: '{{STAFF_1}}', desc: '케어플랜 수립 및 프로그램 총괄' },
-  { role: '간호(조무)사', name: '{{STAFF_2}}', desc: '건강 체크 · 복약 관리' },
-  { role: '요양보호사', name: '{{STAFF_3}}', desc: '일상생활 지원 및 활동 보조' },
+  { role: '센터장', name: site.business.ceoName, desc: '사회복지사 1급 · 요양보호사' },
+  { role: '사회복지사', name: '○○○', desc: '케어플랜 수립 및 프로그램 총괄' },
+  { role: '간호(조무)사', name: '○○○', desc: '건강 체크 · 복약 관리' },
+  { role: '요양보호사', name: '○○○', desc: '일상생활 지원 및 활동 보조' },
 ]
 
 export default function AboutPage() {
