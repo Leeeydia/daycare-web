@@ -9,7 +9,6 @@
   ],
   "headers": [
     {
-      "comment": "검토용 미리보기 배포 — 검색엔진 노출 차단. 실제 오픈 시 이 헤더와 public/robots.txt를 함께 해제할 것.",
       "source": "/(.*)",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
