@@ -1,0 +1,41 @@
+# 운영 프로필 예시 — 이 파일을 application-prod.yml로 복사해 사용한다.
+# 실제 값은 전부 환경변수로 주입하며, application-prod.yml은 git에 커밋하지 않는다.
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    show-sql: false
+
+server:
+  tomcat:
+    remoteip:
+      remote-ip-header: X-Forwarded-For
+      protocol-header: X-Forwarded-Proto
+
+app:
+  center:
+    name: ${CENTER_NAME}
+  upload:
+    dir: ${UPLOAD_DIR:/app/uploads}
+  cors:
+    # 운영 도메인만 허용
+    allowed-origins: ${CORS_ALLOWED_ORIGINS}
+  admin:
+    initial-username: ${ADMIN_INITIAL_USERNAME}
+    initial-password: ${ADMIN_INITIAL_PASSWORD}
+  sms:
+    enabled: true
+    from: ${SMS_FROM}                 # SOLAPI에 사전 등록된 발신번호
+    admin-phone: ${SMS_ADMIN_PHONE}   # 알림을 받을 관리자 휴대폰 번호
+    api-key: ${SOLAPI_API_KEY}
+    api-secret: ${SOLAPI_API_SECRET}
+
+logging:
+  level:
+    root: INFO
+    com.daycare: INFO
